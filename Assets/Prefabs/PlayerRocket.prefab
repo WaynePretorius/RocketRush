@@ -859,8 +859,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeToWaitForSceneLoad: 2
+  parWin: {fileID: 5024562461356770265}
+  parCrash: {fileID: 3842947005333018285}
   crashSound: {fileID: 8300000, guid: 27da06f5043a8904eac98173b13a0e6c, type: 3}
   winSound: {fileID: 8300000, guid: fd77e26537da2d44f874ebb14643bc8c, type: 3}
+  hasCollission: 1
 --- !u!1001 &1096536176621585768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -945,6 +948,11 @@ PrefabInstance:
 --- !u!4 &185767960350144510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 983006473983668886, guid: 560ffd5378ee6204784d60441569a614, type: 3}
+  m_PrefabInstance: {fileID: 1096536176621585768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3842947005333018285 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4207292406529496005, guid: 560ffd5378ee6204784d60441569a614, type: 3}
   m_PrefabInstance: {fileID: 1096536176621585768}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2615075976318787284
@@ -1395,6 +1403,11 @@ PrefabInstance:
 --- !u!4 &7550012656735858489 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1825308368725619868, guid: 80d920a5cc2c5d24c9e83012c6d3d738, type: 3}
+  m_PrefabInstance: {fileID: 8184101311889906597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5024562461356770265 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3758553127363500156, guid: 80d920a5cc2c5d24c9e83012c6d3d738, type: 3}
   m_PrefabInstance: {fileID: 8184101311889906597}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9045522443217107745

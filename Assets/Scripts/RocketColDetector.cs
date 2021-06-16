@@ -8,10 +8,6 @@ public class RocketColDetector : MonoBehaviour
     //be able to change the times that you wait before a scene is loaded
     [SerializeField] private float timeToWaitForSceneLoad = 1f;
 
-    //Cashe the movement script
-    Movement moveScript;
-    AudioSource myAudio;
-
     //Particle system for crash and win
     [SerializeField] ParticleSystem parWin;
     [SerializeField] ParticleSystem parCrash;
@@ -19,6 +15,13 @@ public class RocketColDetector : MonoBehaviour
     //create variables for different audioclips
     [SerializeField] AudioClip crashSound;
     [SerializeField] AudioClip winSound;
+
+    //turn collision on or off
+    [SerializeField] bool hasCollission = true;
+
+    //Cashe the movement script
+    Movement moveScript;
+    AudioSource myAudio;
 
     //see if the player is in a state to play
     bool isNonPlayState = false;
@@ -36,6 +39,27 @@ public class RocketColDetector : MonoBehaviour
         myAudio = GetComponent<AudioSource>();
     }
 
+    private void Update()
+    {
+        DebugMode();
+    }
+
+    //Debug Keys to load next level, or turn off collision
+    void DebugMode() 
+    {
+        //toggle between having and not having collision
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            hasCollission = !hasCollission;
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+
+    }
+
     //detect the collision and identify it
     private void OnCollisionEnter(Collision other)
     {
@@ -50,7 +74,10 @@ public class RocketColDetector : MonoBehaviour
                     NextLevelSequence();
                     break;
                 default:
-                    CrashSequence();
+                    if (hasCollission)
+                    {
+                        CrashSequence();
+                    }
                     break;
             }
         }
