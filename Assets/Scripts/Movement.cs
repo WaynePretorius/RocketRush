@@ -99,6 +99,7 @@ public class Movement : MonoBehaviour
         SetRotation(rotationSpeed);
         rightBottom.Play();
         rightUpper.Play();
+        
     }
 
     private void RotateRight()
